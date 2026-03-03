@@ -5,15 +5,6 @@
 
 $ErrorActionPreference = "SilentlyContinue"
 
-# 1. Yonetici yetkisi kontrolu
-if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-    Write-Warning "Bu betik yonetici (Administrator) haklari gerektirir."
-    Write-Host "Lutfen Powershell'i Yonetici olarak calistirin."
-    Write-Host "Eger irm kullanacaksaniz asagidaki komutu deneyin:"
-    Write-Host "Start-Process powershell -Verb RunAs -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command `\"& {Invoke-Expression(Invoke-RestMethod ''GITHUB_RAW_URL'')}`\"'"
-    exit
-}
-
 # 2. Kullanici onayi
 Write-Host "=======================================================" -ForegroundColor Cyan
 Write-Host "VM Gizleme ve Sürücü Yükleme Araci (Tek Dosya Kurulum)" -ForegroundColor Cyan
