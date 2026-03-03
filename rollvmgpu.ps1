@@ -647,7 +647,7 @@ foreach ($svc in $vmServices) {
 # ADIM 5: VmLoader Driver Yukleme
 # ============================================================
 Step "VmLoader driver hazirlaniyor ve yukleniyor..."
-$driverUrl = "https://github.com/r0llie/xd/raw/refs/heads/main/vmloader.sys"
+$driverUrl = "https://github.com/r0llie/xd/raw/refs/heads/main/VmLoader.sys"
 $driverPath = "C:\xd.sys"
 try {
     Write-Host "    [*] Driver indiriliyor: $driverUrl" -ForegroundColor Cyan
@@ -672,5 +672,6 @@ Write-Host ""
 Write-Host "  Loglari inceleyin. Yeniden baslatmak icin ENTER'a basin." -ForegroundColor Yellow
 Read-Host
 shutdown -r -t 00 -f
+
 
 
